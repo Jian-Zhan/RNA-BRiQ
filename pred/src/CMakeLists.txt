@@ -1,0 +1,12 @@
+add_library(nsppred
+BRNode.cpp
+BRFoldingTree.cpp
+BRConnection.cpp
+MoveMutator.cpp
+BaseMoveLibrary.cpp
+MCRun.cpp
+PhoBasicLocal.cpp
+ThreeBaseMoveLibrary.cpp
+BackboneModelingTemplate.cpp
+FragmentLibrary.cpp
+)

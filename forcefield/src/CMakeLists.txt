@@ -1,0 +1,16 @@
+add_library(nspforcefield
+AtomicEnergyTable.cpp
+BasePairEnergyTable.cpp
+EnergyTable.cpp
+EnergyTable2.cpp
+NeighborConnectionGenerator.cpp
+DMSearcher.cpp
+RiboConnectHashMap.cpp
+RiboseOxygenEnergyTable.cpp
+RiboConnectToPO3.cpp
+SimpleRiboConnect.cpp
+PhoBasicEnergyTable.cpp
+BaseStackingEnergyTable.cpp
+BasePair6DEnergyTable.cpp
+PO3Builder.cpp
+)
