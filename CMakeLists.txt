@@ -18,23 +18,59 @@ endif()
 set(CMAKE_CXX_FLAGS_DEBUG "-g")
 set(CMAKE_CXX_FLAGS_RELEASE "-O2")
 
-add_subdirectory (math)
-add_subdirectory (geometry)
-add_subdirectory (tools)
-add_subdirectory (model)
-add_subdirectory (dataio)
-add_subdirectory (forcefield)
-add_subdirectory (para)
-add_subdirectory (pred)
-
-add_custom_target(combinelib 
-        rm -f libbriq.a
-	COMMAND ar rcT libbriq.a libnspmath.a libnspgeometry.a
-libnspmodel.a libnsptools.a libnspdataio.a libnspforcefield.a libnsppara.a
-libnsppred.a
-	COMMAND ranlib libbriq.a
-	DEPENDS nspmath nspgeometry nsptools nspmodel nspdataio
-nspforcefield nsppara nsppred
-        WORKING_DIRECTORY ${LIBRARY_OUTPUT_PATH})
+add_library(briq
+math/src/KDTree.cpp
+geometry/src/Angles.cpp 
+geometry/src/localframe.cpp
+geometry/src/TransMatrix.cpp
+geometry/src/CsMove.cpp
+geometry/src/RMSD.cpp
+tools/src/StringTool.cpp
+tools/src/InputParser.cpp
+tools/src/CmdArgs.cpp
+model/src/AtomLib.cpp
+model/src/AtomProperty.cpp
+model/src/BaseDistanceMatrix.cpp
+model/src/BasePairComposition.cpp
+model/src/BaseRotamer.cpp
+model/src/BaseRotamerLib.cpp
+model/src/PhoDistanceMatrix.cpp
+model/src/PhophateGroup.cpp
+model/src/ProteinRep.cpp
+model/src/ResName.cpp
+model/src/RnaAtomLib.cpp
+model/src/RNABaseName.cpp
+model/src/RNARibose.cpp
+model/src/Sub.cpp
+model/src/RNABaseLib.cpp
+model/src/BasePair.cpp
+model/src/AssignRNASS.cpp
+dataio/src/datapaths.cpp
+forcefield/src/AtomicEnergyTable.cpp
+forcefield/src/BasePairEnergyTable.cpp
+forcefield/src/EnergyTable.cpp
+forcefield/src/EnergyTable2.cpp
+forcefield/src/NeighborConnectionGenerator.cpp
+forcefield/src/DMSearcher.cpp
+forcefield/src/RiboConnectHashMap.cpp
+forcefield/src/RiboseOxygenEnergyTable.cpp
+forcefield/src/RiboConnectToPO3.cpp
+forcefield/src/SimpleRiboConnect.cpp
+forcefield/src/PhoBasicEnergyTable.cpp
+forcefield/src/BaseStackingEnergyTable.cpp
+forcefield/src/BasePair6DEnergyTable.cpp
+forcefield/src/PO3Builder.cpp
+para/src/Parameter.cpp
+pred/src/BRNode.cpp
+pred/src/BRFoldingTree.cpp
+pred/src/BRConnection.cpp
+pred/src/MoveMutator.cpp
+pred/src/BaseMoveLibrary.cpp
+pred/src/MCRun.cpp
+pred/src/PhoBasicLocal.cpp
+pred/src/ThreeBaseMoveLibrary.cpp
+pred/src/BackboneModelingTemplate.cpp
+pred/src/FragmentLibrary.cpp
+)
 
 add_subdirectory (exec)

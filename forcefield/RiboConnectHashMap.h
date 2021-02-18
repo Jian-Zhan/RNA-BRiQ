@@ -56,7 +56,7 @@ public:
 			return PhophateGroupLocal(PList[index], O5List[index], OP1List[index], OP2List[index], eneList[index]);
 		}
 
-		int minD = 999.9;
+		int minD = (int)999.9;
 		int minIndex = 0;
 		int d, dd, i, j;
 
