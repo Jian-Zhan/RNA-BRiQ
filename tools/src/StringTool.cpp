@@ -15,14 +15,14 @@ string trimString(const string& s)
              return s;
      }
      int begin=0, end=s.length()-1;
-     for (unsigned int i = 0; i < s.length(); i++)
+     for (int i = 0; i < s.length(); i++)
      {
              if (s.at(i) == ' ')
                      begin++;
              else
                      break;
      }
-     for (unsigned int i = s.length() - 1; i >= 0; i--)
+     for (int i = s.length() - 1; i >= 0; i--)
      {
              if (s.at(i) == ' ')
                      end--;

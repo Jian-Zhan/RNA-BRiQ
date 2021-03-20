@@ -23,6 +23,7 @@
 #include "pred/BaseMoveLibrary.h"
 #include <iostream>
 #include <set>
+#include <stdio.h>
 
 namespace NSPpred {
 

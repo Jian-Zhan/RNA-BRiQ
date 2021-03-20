@@ -12,8 +12,6 @@
 #include "model/ProteinRep.h"
 #include "forcefield/NeighborConnectionGenerator.h"
 #include "pred/MCRun.h"
-#include <time.h>
-#include <stdlib.h>
 #include <iostream>
 
 using namespace NSPmodel;

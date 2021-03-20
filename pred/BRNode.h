@@ -411,8 +411,8 @@ public:
 			if(phoInfo[i] == 2 && allNodes[i]->connectToNeighbor)
 				this->phoGroupC.push_back(i);
 		}
-		delete riboseInfo;
-		delete phoInfo;
+		delete[] riboseInfo;
+		delete[] phoInfo;
 	}
 
 	void printPartition(){

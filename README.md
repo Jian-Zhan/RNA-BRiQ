@@ -75,7 +75,7 @@ BRiQ_init GCGCAAGC init.pdb
 And the base pairing information can be extracted by `BRiQ_assignSS` from the input PDB structure:
 
 ```
-BRiQ_assign $INPUTPDB $OUTFILE
+BRiQ_assignSS $INPUTPDB $OUTFILE
 ```
 
 ### RNA structure refinement
