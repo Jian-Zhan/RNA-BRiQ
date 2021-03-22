@@ -1,0 +1,5 @@
+pdb gcaa.pdb
+seq GCGCAAGC
+sec ((....))
+nwc ..(..)..
+fixed 0 1 6 7

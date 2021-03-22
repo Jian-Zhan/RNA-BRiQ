@@ -62,8 +62,6 @@ int main(int argc, char** argv){
 		}
 	}
 
-	cout << "a" << endl;
-
 	int len = typeList.size();
 	bool connectToNeighbor[len];
 	int baseTypeSeq[len];
@@ -77,8 +75,6 @@ int main(int argc, char** argv){
 			id++;
 		}
 	}
-
-	cout << "b" << endl;
 
 	id = 0;
 	for(int i=1;i<seq.length();i++){
@@ -94,11 +90,6 @@ int main(int argc, char** argv){
 	}
 	connectToNeighbor[len-1] = false;
 
-	cout << "connect:" << endl;
-	for(int i=0;i<len;i++){
-		cout << connectToNeighbor[i] << endl;
-	}
-	cout << "end" << endl;
 
 	BRNode** nodeList = new BRNode*[len];
 	for(int i=0;i<len;i++){

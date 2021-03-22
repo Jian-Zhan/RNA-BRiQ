@@ -43,7 +43,7 @@ export BRiQ_DATAPATH=FILEPATH/BRiQ_data     ## Change "FILEPATH" to the real pat
 tar -xvz RNA-BRiQ-data.tar.gz --one-top-level=$BRiQ_DATAPATH
 ```
 
-## Running the program 
+## Running the program
 
 ### Environment variables
 
@@ -56,7 +56,7 @@ export PATH=$PATH:FILEPATH/BRiQ/build/bin  ## Change "FILEPATH" to the real path
 
 ### Input files
 
-Before running the program, you need to prepare the input files. An example files can be found at `demo/gcaa/input`
+Before running the program, you need to prepare the input file. An example files can be found at `demo/gcaa/input`
 
 ```
 pdb gcaa.pdb    ## Initial structure in PDB format
@@ -66,27 +66,39 @@ nwc ..(..)..    ## Non-Watson-Crick pairs
 fixed 0 1 6 7   ## Index of the fixed nucleotides during structure sampling, starting from 0
 ```
 
-If there is only RNA sequence but no reference PDB structure, `BRiQ_init` can generate an initial PDB structure from sequence:
+If there is only RNA sequence but no reference PDB structure, `BRiQ_InitPDB` can generate an initial PDB structure from sequence. For example, the following command generates an initial PDB structure for RNA sequence `GCGCAAGC`.
 
 ```
-BRiQ_init GCGCAAGC init.pdb
+BRiQ_InitPDB GCGCAAGC init.pdb
 ```
 
-And the base pairing information can be extracted by `BRiQ_assignSS` from the input PDB structure:
+And the base pairing information can be extracted by `BRiQ_AssignSS` from the input PDB structure `$INPUTPDB` and stored to `$OUTFILE`:
 
 ```
-BRiQ_assignSS $INPUTPDB $OUTFILE
+BRiQ_AssignSS $INPUTPDB $OUTFILE
 ```
 
 ### RNA structure refinement
+
 `BRiQ_Refinement` is the program to refine the initial structure of a RNA.
 
 ```
 BRiQ_Refinement $INPUT $OUTPDB $RANDOMSEED
 ```
 
+Where `$INPUT` is the input file, `$OUTPDB` is the output structure, and `$RANDOMSEED` is the random seed.
+
 ### RNA structure prediction
+
 `BRiQ_Predict` is the program to predict the structure of a RNA.
 ```
 BRiQ_Predict $INPUT $OUTPDB $RANDOMSEED
 ```
+
+Where `$INPUT` is the input file, `$OUTPDB` is the output structure, and `$RANDOMSEED` is the random seed.
+
+### Demonstrations
+
+* [demo/refinement/](demo/refinement/): RNA structure refinement.
+* [demo/partial_predict/](demo/partial_predict/): RNA structure prediction from an initial reference structure.
+* [demo/predict_from_seq_SS/](demo/predict_from_seq_SS/): RNA structure prediction from sequence and pre-assigned secondary structure information.
