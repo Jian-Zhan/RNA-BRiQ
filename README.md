@@ -1,6 +1,10 @@
 # RNA-BRiQ
 
-This repository contains codes for the following work: Peng Xiong, Ruibo Wu, Jian Zhan and Yaoqi Zhou, Robust RNA structure refinement by a nucleobase-centric sampling algorithm coupled with a backbone rotameric and quantum-mechanical-energy-scaled base-base knowledge-based potential.
+This repository contains codes for the following work: Peng Xiong, Ruibo Wu, Jian Zhan and Yaoqi Zhou, Robust RNA structure refinement by a nucleobase-centric sampling algorithm coupled with a backbone rotameric and quantum-mechanical-energy-scaled base-base knowledge-based potential. 
+
+[![DOI](https://zenodo.org/badge/339727362.svg)](https://zenodo.org/badge/latestdoi/339727362)
+
+
 
 This is free software for non-commercial users. If you have any questions, please contact Peng Xiong via email pengx_a@163.com
 
